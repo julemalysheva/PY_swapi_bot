@@ -144,5 +144,9 @@ def search_unsplash_photo(call):
         except: bot.send_message(call.message.chat.id, f"А вот картинку я не нашел...")    
     else: bot.send_message(call.message.chat.id, f"А вот картинку я не нашел...")
 
+@bot.message_handler(content_types='text')
+def message_reply(message):
+    bot.send_message(message.chat.id,f'{message.from_user.first_name}, пожалуйста,\nвоспользуйтесь командами меню')    
+
    
 bot.polling()
